@@ -1,3 +1,3 @@
-const appname = "eMart";
+const appname = "VASA Mart";
 const appversion = "Version 1.0.0";
-const credits = "@arun";
+const credits = "@arun_balaji";
