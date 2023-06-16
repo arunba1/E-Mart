@@ -7,8 +7,15 @@ import '../../widget_common/bg_widget.dart';
 import '../../widget_common/custom_textfields.dart';
 import '../../widget_common/our_button.dart';
 
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
+
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
+  bool ischeck = false;
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +41,14 @@ class SignupScreen extends StatelessWidget {
                 Row(
                   children: [
                     Checkbox(
-                      checkColor: redColor,
-                      value: false,
-                      onChanged: (newValue) {},
+                      activeColor: redColor,
+                      checkColor: whiteColor,
+                      value: ischeck,
+                      onChanged: (newValue) {
+                        setState(() {
+                          ischeck = newValue!;
+                        });
+                      },
                     ),
                     10.widthBox,
                     Expanded(
@@ -45,27 +57,27 @@ class SignupScreen extends StatelessWidget {
                         children: [
                           TextSpan(
                               text: "I agree to the ",
-                              style:
-                                  TextStyle(fontFamily: bold, color: fontGrey)),
+                              style: TextStyle(
+                                  fontFamily: regular, color: fontGrey)),
                           TextSpan(
                               text: termsAndCond,
-                              style:
-                                  TextStyle(fontFamily: bold, color: redColor)),
+                              style: TextStyle(
+                                  fontFamily: regular, color: redColor)),
                           TextSpan(
                               text: " &",
-                              style:
-                                  TextStyle(fontFamily: bold, color: fontGrey)),
+                              style: TextStyle(
+                                  fontFamily: regular, color: fontGrey)),
                           TextSpan(
                               text: privacyPolicy,
-                              style:
-                                  TextStyle(fontFamily: bold, color: redColor)),
+                              style: TextStyle(
+                                  fontFamily: regular, color: redColor)),
                         ],
                       )),
                     ),
                   ],
                 ),
                 ourButton(
-                        color: redColor,
+                        color: ischeck == true ? redColor : lightGrey,
                         textColor: whiteColor,
                         title: signup,
                         onPress: () {})
@@ -74,19 +86,15 @@ class SignupScreen extends StatelessWidget {
                     .make(),
                 10.heightBox,
                 //wrapping into gesture detector of velocity x
-                RichText(
-                    text: TextSpan(children: [
-                  TextSpan(
-                    text: alreadyHaveAccount,
-                    style: TextStyle(fontFamily: bold, color: fontGrey),
-                  ),
-                  TextSpan(
-                    text: login,
-                    style: TextStyle(fontFamily: bold, color: redColor),
-                  )
-                ])).onTap(() {
-                  Get.back();
-                }),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    alreadyHaveAccount.text.color(fontGrey).make(),
+                    login.text.color(redColor).make().onTap(() {
+                      Get.back();
+                    })
+                  ],
+                ),
               ],
             )
                 .box

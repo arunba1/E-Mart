@@ -1,4 +1,5 @@
 import 'package:e_mart/consts.dart';
+import 'package:e_mart/home_screen/home_screen.dart';
 import 'package:e_mart/lists.dart';
 import 'package:e_mart/screens/auth_screen/signup_screen.dart';
 import 'package:e_mart/widget_common/applogo_widget.dart';
@@ -41,13 +42,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 5.heightBox,
                 //ourButton().box.width(context.screenWidth - 50).make(),
                 ourButton(
-                        color: redColor,
-                        textColor: whiteColor,
-                        title: login,
-                        onPress: () {})
-                    .box
-                    .width(context.screenWidth - 50)
-                    .make(),
+                    color: redColor,
+                    textColor: whiteColor,
+                    title: login,
+                    onPress: () {
+                      Get.to(() => HomeScreen());
+                    }).box.width(context.screenWidth - 50).make(),
                 5.heightBox,
                 createNewAccount.text.color(fontGrey).make(),
                 5.heightBox,
