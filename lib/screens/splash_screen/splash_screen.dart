@@ -1,5 +1,6 @@
 import 'package:e_mart/colors.dart';
 import 'package:e_mart/consts.dart';
+import 'package:e_mart/screens/auth_screen/signup_screen.dart';
 import 'package:e_mart/widget_common/applogo_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
