@@ -15,8 +15,10 @@ class CategoryScreen extends StatelessWidget {
         title: categories.text.fontFamily(bold).white.make(),
       ),
       body: Container(
-          padding: EdgeInsets.all(12),
+          padding: EdgeInsets.all(13),
           child: GridView.builder(
+              shrinkWrap: true,
+              itemCount: 9,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
                   mainAxisSpacing: 8,
@@ -46,7 +48,7 @@ class CategoryScreen extends StatelessWidget {
                     .outerShadowSm
                     .make()
                     .onTap(() {
-                  Get.toEnd(() => CategoryDetails(
+                  Get.to(() => CategoryDetails(
                         title: categoriesList[index],
                       ));
                 });

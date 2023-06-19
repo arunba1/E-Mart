@@ -262,7 +262,10 @@ class HomeScreen extends StatelessWidget {
                             .roundedSM
                             .padding(EdgeInsets.all(12))
                             .make();
-                      })))
+                      }
+                      )
+                      )
+                      )
                 ],
               ),
             ),
