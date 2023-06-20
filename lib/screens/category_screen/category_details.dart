@@ -1,5 +1,7 @@
+import 'package:e_mart/screens/category_screen/item_details.dart';
 import 'package:e_mart/widget_common/bg_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../consts.dart';
 
 class CategoryDetails extends StatelessWidget {
@@ -86,7 +88,10 @@ class CategoryDetails extends StatelessWidget {
                             .roundedSM
                             .outerShadowSm
                             .padding(EdgeInsets.all(12))
-                            .make();
+                            .make()
+                            .onTap(() {
+                          Get.to(() => const ItemDetails(title: "Dummy Item"));
+                        });
                       }))
             ],
           ),
