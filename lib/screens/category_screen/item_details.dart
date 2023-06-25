@@ -2,7 +2,6 @@ import 'package:e_mart/colors.dart';
 import 'package:e_mart/consts.dart';
 import 'package:e_mart/widget_common/our_button.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 
 class ItemDetails extends StatelessWidget {
@@ -161,7 +160,7 @@ class ItemDetails extends StatelessWidget {
                       Row(
                         children: [
                           SizedBox(
-                            width: 100,
+                            width: 80,
                             child: "Total: ".text.color(textfieldGrey).make(),
                           ),
                           "\$0.00"
@@ -178,10 +177,12 @@ class ItemDetails extends StatelessWidget {
                   //description selection
 
                   10.heightBox,
-                  
-                  "Description".text.color(darkFontGrey).fontFamily(semibold).make(),
 
-
+                  "Description"
+                      .text
+                      .color(darkFontGrey)
+                      .fontFamily(semibold)
+                      .make(),
                 ],
               ),
             ),
