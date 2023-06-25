@@ -160,7 +160,7 @@ class ItemDetails extends StatelessWidget {
                       Row(
                         children: [
                           SizedBox(
-                            width: 100,
+                            width: 70,
                             child: "Total: ".text.color(textfieldGrey).make(),
                           ),
                           "\$0.00"
