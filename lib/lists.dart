@@ -1,5 +1,6 @@
 import 'package:e_mart/consts.dart';
 import 'package:e_mart/images.dart';
+import 'package:e_mart/screens/category_screen/item_details.dart';
 
 const socialIconList = [icFacebookLogo, icGoogleLogo, icTwitterLogo];
 
@@ -12,5 +13,34 @@ const featuredImages2 = [imgS4, imgS5, imgS6];
 const featuredTitles1 = [womenDress, girlsDress, girlsWatches];
 const featuredTitles2 = [boysGlasses, mobilePhone, tshirts];
 
-const categoriesList = [womenClothing,menClothingFashion,compAccess,automobile,kidtoys,sports,jewelery,cellphone,furniture];
-const categoryImages=[imgFc1,imgFc2,imgFc3,imgFc4,imgFc5,imgFc6,imgFc7,imgFc8,imgFc9];
+const categoriesList = [
+  womenClothing,
+  menClothingFashion,
+  compAccess,
+  automobile,
+  kidtoys,
+  sports,
+  jewelery,
+  cellphone,
+  furniture
+];
+const categoryImages = [
+  imgFc1,
+  imgFc2,
+  imgFc3,
+  imgFc4,
+  imgFc5,
+  imgFc6,
+  imgFc7,
+  imgFc8,
+  imgFc9
+];
+
+// ignore: constant_identifier_names
+const ItemDetailButtonsList = [
+  video,
+  reviews,
+  sellerpolicy,
+  returnpolicy,
+  supportpolicy
+];
