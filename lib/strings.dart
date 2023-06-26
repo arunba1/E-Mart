@@ -50,3 +50,12 @@ const womenClothing = "Women Clothing",
     jewelery = "Jewelerry",
     cellphone = "Cellphone & Tab",
     furniture = "Furniture";
+
+//item details strings
+
+const video = "Video",
+    reviews = "Reviews",
+    sellerpolicy = "Seller Policy",
+    returnpolicy = "Return Policy",
+    supportpolicy = "Support Policy",
+    productsyoumaylike = "Products you may like";
