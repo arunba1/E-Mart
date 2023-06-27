@@ -59,3 +59,5 @@ const video = "Video",
     returnpolicy = "Return Policy",
     supportpolicy = "Support Policy",
     productsyoumaylike = "Products you may like";
+
+const logout = "Logout";
