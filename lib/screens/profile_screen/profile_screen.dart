@@ -42,12 +42,20 @@ class ProfileScreen extends StatelessWidget {
                       color: whiteColor,
                     )
                   ),
-                  onPressed: (){}, child: logout.text.fontFamily(semibold).white.make()
+                  onPressed: (){}, 
+                  child: logout.text.fontFamily(semibold).white.make()
                   ),
               ],
             ),
             20.heightBox,
-            Column().box.white.rounded.make(),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                "00".text.fontFamily(bold).color(darkFontGrey).size(16).make(),
+                5.heightBox,
+                "in your cart".text.color(darkFontGrey).make(),
+              ],
+            ).box.white.rounded.width(context.screenWidth/3.2).height(80).padding(const EdgeInsets.all(4)).make(),
           ],
 
 
