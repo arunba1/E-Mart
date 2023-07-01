@@ -1,6 +1,6 @@
 import 'package:e_mart/consts.dart';
 
-Widget detailCard({width,String? count,String? title}){
+Widget detailCard({width, String? count, String? title}){
   return  Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
