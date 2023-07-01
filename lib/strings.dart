@@ -60,4 +60,8 @@ const video = "Video",
     supportpolicy = "Support Policy",
     productsyoumaylike = "Products you may like";
 
+//Profile strings
+
+const wishlist = "My Wishlist", orders = "My Orders", message = "Messages";
+
 const logout = "Logout";
