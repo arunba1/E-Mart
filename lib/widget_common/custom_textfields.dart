@@ -1,15 +1,16 @@
 import 'package:e_mart/consts.dart';
 
-Widget customTextField({String? title, String? hint, controller}) {
+Widget customTextField({String? title, String? hint, controller, ispass}) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       title!.text.color(redColor).fontFamily(semibold).size(16).make(),
       5.heightBox,
       TextFormField(
-        //controller: controller,
+        obscureText: ispass,
+        controller: controller,
         decoration: InputDecoration(
-            hintStyle: TextStyle(
+            hintStyle: const TextStyle(
               fontFamily: semibold,
               color: textfieldGrey,
             ),
@@ -18,8 +19,8 @@ Widget customTextField({String? title, String? hint, controller}) {
             fillColor: lightGrey,
             filled: true,
             border: InputBorder.none,
-            focusedBorder:
-                OutlineInputBorder(borderSide: BorderSide(color: redColor))),
+            focusedBorder: const OutlineInputBorder(
+                borderSide: BorderSide(color: redColor))),
       ),
       5.heightBox,
     ],

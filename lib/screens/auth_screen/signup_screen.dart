@@ -1,3 +1,5 @@
+import 'package:e_mart/controllers/auth_controller.dart';
+import 'package:e_mart/screens/home_screen/home.dart';
 import 'package:get/get.dart';
 
 import '../../consts.dart';
@@ -16,6 +18,13 @@ class SignupScreen extends StatefulWidget {
 
 class _SignupScreenState extends State<SignupScreen> {
   bool ischeck = false;
+  var controller = Get.put(AuthController());
+
+  //text Controller
+  var nameController = TextEditingController();
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
+  var passwordRetypeController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -32,10 +41,26 @@ class _SignupScreenState extends State<SignupScreen> {
             15.heightBox,
             Column(
               children: [
-                customTextField(hint: nameHint, title: name),
-                customTextField(hint: emailHint, title: email),
-                customTextField(hint: passwordHint, title: password),
-                customTextField(hint: passwordHint, title: retypePassword),
+                customTextField(
+                    hint: nameHint,
+                    title: name,
+                    controller: nameController,
+                    ispass: false),
+                customTextField(
+                    hint: emailHint,
+                    title: email,
+                    controller: emailController,
+                    ispass: false),
+                customTextField(
+                    hint: passwordHint,
+                    title: password,
+                    controller: passwordController,
+                    ispass: true),
+                customTextField(
+                    hint: passwordHint,
+                    title: retypePassword,
+                    controller: passwordRetypeController,
+                    ispass: true),
                 5.heightBox,
                 //ourButton().box.width(context.screenWidth - 50).make(),
                 Row(
@@ -77,13 +102,33 @@ class _SignupScreenState extends State<SignupScreen> {
                   ],
                 ),
                 ourButton(
-                        color: ischeck == true ? redColor : lightGrey,
-                        textColor: whiteColor,
-                        title: signup,
-                        onPress: () {})
-                    .box
-                    .width(context.screenWidth - 50)
-                    .make(),
+                    color: ischeck == true ? redColor : lightGrey,
+                    textColor: whiteColor,
+                    title: signup,
+                    onPress: () async {
+                      if (ischeck != false) {
+                        try {
+                          await controller
+                              .signupMethod(
+                                  context: context,
+                                  email: emailController.text,
+                                  password: passwordController.text)
+                              .then((value) {
+                            return controller.storeUserData(
+                              email: emailController.text,
+                              password: passwordController.text,
+                              name: nameController.text,
+                            );
+                          }).then((value) {
+                            VxToast.show(context, msg: loggedin);
+                            Get.offAll(() => const Home());
+                          });
+                        } catch (e) {
+                          auth.signOut();
+                          VxToast.show(context, msg: e.toString());
+                        }
+                      }
+                    }).box.width(context.screenWidth - 50).make(),
                 10.heightBox,
                 //wrapping into gesture detector of velocity x
                 Row(
