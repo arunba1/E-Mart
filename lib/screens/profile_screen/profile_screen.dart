@@ -1,7 +1,10 @@
 import 'package:e_mart/consts.dart';
+import 'package:e_mart/controllers/auth_controller.dart';
 import 'package:e_mart/lists.dart';
+import 'package:e_mart/screens/auth_screen/login_screen.dart';
 import 'package:e_mart/screens/profile_screen/components/details_card.dart';
 import 'package:e_mart/widget_common/bg_widget.dart';
+import 'package:get/get.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -48,7 +51,10 @@ class ProfileScreen extends StatelessWidget {
                         side: const BorderSide(
                       color: whiteColor,
                     )),
-                    onPressed: () {},
+                    onPressed: () async {
+                      await Get.put(AuthController()).signoutMethod(context);
+                      Get.offAll(() => const LoginScreen());
+                    },
                     child: logout.text.fontFamily(semibold).white.make()),
               ],
             ),
