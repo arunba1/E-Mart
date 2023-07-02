@@ -2,12 +2,15 @@ import 'package:e_mart/consts.dart';
 import 'package:e_mart/screens/category_screen/category_details.dart';
 import 'package:e_mart/screens/category_screen/category_screen.dart';
 import 'package:e_mart/screens/splash_screen/splash_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'lists.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
