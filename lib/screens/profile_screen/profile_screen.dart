@@ -1,16 +1,21 @@
 import 'package:e_mart/consts.dart';
 import 'package:e_mart/controllers/auth_controller.dart';
+//import 'package:e_mart/controllers/profile_controller.dart';
 import 'package:e_mart/lists.dart';
 import 'package:e_mart/screens/auth_screen/login_screen.dart';
 import 'package:e_mart/screens/profile_screen/components/details_card.dart';
+import 'package:e_mart/screens/profile_screen/edit_profile_screen.dart';
 import 'package:e_mart/widget_common/bg_widget.dart';
 import 'package:get/get.dart';
+
+import '../../controllers/profile_controller.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    //var controller = Get.put(ProfileController());
     return bgWidget(
         child: Scaffold(
       body: SafeArea(
@@ -24,7 +29,9 @@ class ProfileScreen extends StatelessWidget {
                 child: Icon(
                   Icons.edit,
                   color: whiteColor,
-                )).onTap(() {}),
+                )).onTap(() {
+              Get.to(() => const EditProfileScreen());
+            }),
           ),
 
           //users detail section
