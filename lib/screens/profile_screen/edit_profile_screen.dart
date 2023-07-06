@@ -25,7 +25,7 @@ class EditProfileScreen extends StatelessWidget {
           ourButton(
               color: redColor,
               onPress: () {
-                //Get.find<ProfileController>().changeImage(context);
+                Get.find<ProfileController>().changeImage(context);
               },
               textColor: whiteColor,
               title: "Change"),

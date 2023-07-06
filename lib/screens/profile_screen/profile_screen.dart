@@ -15,7 +15,7 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //var controller = Get.put(ProfileController());
+    var controller = Get.put(ProfileController());
     return bgWidget(
         child: Scaffold(
       body: SafeArea(
